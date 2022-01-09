@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_ecom/apiPage/apiPage.dart';
+import 'package:flutter_learn_ecom/screenPage/ProductCatagorie.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Product List'),
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ProductCatagorie()));
+              },
+              icon: Icon(Icons.list)),
+        ],
       ),
       body: Center(
         child: FutureBuilder(
