@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_ecom/apiPage/apiPage.dart';
 import 'package:flutter_learn_ecom/screenPage/ProductCatagorie.dart';
+import 'package:flutter_learn_ecom/screenPage/productDetails.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,7 +36,13 @@ class HomePage extends StatelessWidget {
                     title: Text(snapshot.data[index]['title']),
                     trailing:
                         Text('BDT ' + snapshot.data[index]['price'].toString()),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductDetails(snapshot.data[index]['id'])));
+                    },
                   );
                 },
               );

@@ -15,4 +15,11 @@ class GetApi {
     final response = await http.get(getCatagoriesURL);
     return json.decode(response.body);
   }
+
+  Future getProductDetails(int id) async {
+    final getProductDetailsURL =
+        Uri.parse('https://fakestoreapi.com/products/$id');
+    final response = await http.get(getProductDetailsURL);
+    return json.decode(response.body);
+  }
 }
